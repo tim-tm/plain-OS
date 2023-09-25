@@ -1,5 +1,5 @@
-#ifndef PRINT_H
-#define PRINT_H
+#ifndef _STDIO_H
+#define _STDIO_H
 #include <stdint.h>
 #include <stddef.h>
 
@@ -22,9 +22,9 @@ enum {
 	PRINT_COLOR_WHITE = 15,
 };
 
-void print_clear();
-void print_char(char c);
-void print_str(char* str);
-void print_set_color(uint8_t fore, uint8_t back);
+void k_print_clear();
+void kputchar(char c);
+void kputs(char* str);
+void k_set_print_color(uint8_t fore, uint8_t back);
 
-#endif // !PRINT_H
+#endif // !_STDIO_H

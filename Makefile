@@ -19,11 +19,11 @@ $(X86_64_ASM_OBJ): build/x86_64/%.o : src/x86_64/%.asm
 
 $(X86_64_C_OBJ): build/x86_64/%.o : src/x86_64/%.c
 	mkdir -p $(dir $@)
-	gcc -c -I src/header -ffreestanding $(patsubst build/x86_64/%.o, src/x86_64/%.c, $@) -o $@
+	gcc -c -I src/include -ffreestanding $(patsubst build/x86_64/%.o, src/x86_64/%.c, $@) -o $@
 
 $(KERNEL_OBJ): build/kernel/%.o : src/kernel/%.c
 	mkdir -p $(dir $@)
-	gcc -c -I src/header -ffreestanding $(patsubst build/kernel/%.o, src/kernel/%.c, $@) -o $@
+	gcc -c -I src/include -ffreestanding $(patsubst build/kernel/%.o, src/kernel/%.c, $@) -o $@
 
 build-x86_64: $(KERNEL_OBJ) $(X86_64_OBJ)
 	mkdir -p dist/x86_64

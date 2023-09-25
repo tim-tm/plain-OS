@@ -1,8 +1,8 @@
-#include "../header/print.h"
+#include "../include/stdio.h"
 
 void kernel_main(void) 
 {
-    print_clear();
-    print_set_color(PRINT_COLOR_WHITE, PRINT_COLOR_BLACK);
-    print_str("Welcome to plain-OS!");
+    k_print_clear();
+    k_set_print_color(PRINT_COLOR_WHITE, PRINT_COLOR_BLACK);
+    kputs("Welcome to plain-OS!");
 }

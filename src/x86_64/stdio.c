@@ -1,4 +1,4 @@
-#include "../header/print.h"
+#include "../include/stdio.h"
 
 const static size_t NUM_COLS = 80;
 const static size_t NUM_ROWS = 25;
@@ -40,13 +40,13 @@ static void print_newline() {
     clear_row(NUM_COLS-1);
 }
 
-void print_clear() {
+void k_print_clear() {
     for (size_t i = 0; i < NUM_ROWS; ++i) {
         clear_row(i);
     }
 }
 
-void print_char(char c) {
+void kputchar(char c) {
     if (c == '\n') {
         print_newline();
         return;
@@ -63,18 +63,18 @@ void print_char(char c) {
     ++col;
 }
 
-void print_str(char* str) {
+void kputs(char* str) {
     for (size_t i = 0; 1; ++i) {
         char c = (uint8_t) str[i];
 
         if (c == '\0') {
             return;
         }
-        print_char(c);
+        kputchar(c);
     }
 }
 
-void print_set_color(uint8_t fore, uint8_t back) {
+void k_set_print_color(uint8_t fore, uint8_t back) {
     color = fore + (back << 4);
 }
 
