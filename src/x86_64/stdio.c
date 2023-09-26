@@ -40,13 +40,13 @@ static void print_newline() {
     clear_row(NUM_COLS-1);
 }
 
-void k_print_clear() {
+void print_clear() {
     for (size_t i = 0; i < NUM_ROWS; ++i) {
         clear_row(i);
     }
 }
 
-void kputchar(char c) {
+void putchar(char c) {
     if (c == '\n') {
         print_newline();
         return;
@@ -63,18 +63,18 @@ void kputchar(char c) {
     ++col;
 }
 
-void kputs(char* str) {
+void puts(char* str) {
     for (size_t i = 0; 1; ++i) {
         char c = (uint8_t) str[i];
 
         if (c == '\0') {
             return;
         }
-        kputchar(c);
+        putchar(c);
     }
 }
 
-void k_set_print_color(uint8_t fore, uint8_t back) {
+void set_print_color(uint8_t fore, uint8_t back) {
     color = fore + (back << 4);
 }
 

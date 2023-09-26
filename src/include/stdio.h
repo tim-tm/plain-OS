@@ -22,9 +22,9 @@ enum {
 	PRINT_COLOR_WHITE = 15,
 };
 
-void k_print_clear();
-void kputchar(char c);
-void kputs(char* str);
-void k_set_print_color(uint8_t fore, uint8_t back);
+void print_clear();
+void putchar(char c);
+void puts(char* str);
+void set_print_color(uint8_t fore, uint8_t back);
 
 #endif // !_STDIO_H
